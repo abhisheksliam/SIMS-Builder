@@ -17,7 +17,7 @@ import { Navbar } from './navbar/navbar.component';
     TooltipModule.forRoot(),
     ROUTES,
     FormsModule],
-  declarations: [
+  declarations: [`
     Layout,
     Sidebar,
     Navbar

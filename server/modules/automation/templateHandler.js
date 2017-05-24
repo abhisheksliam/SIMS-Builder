@@ -1,13 +1,14 @@
 const templateModel = require('../../models/automation/template.model');
 
-class TemplateService {
+class TemplateHandler {
 
   getTemplates( query ) {
-    return templateModel.getTemplates( query );
+
+    return templateModel.get( query );
   };
 
 };
 
-module.exports = new TemplateService();
+module.exports = new TemplateHandler();
 
 

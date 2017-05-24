@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const config = require('./config');
 
 try {
-   mongoose.connect(config.db.url, config.db.dbOptions);    
+   mongoose.connect('mongodb://admin:admin@ds143181.mlab.com:43181/service-datastore', config.db.dbOptions);
 }
 catch(error) {
     console.log(error);

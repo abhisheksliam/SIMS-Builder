@@ -1,4 +1,4 @@
-const templateService = require('./../modules/automation/template.service'),
+const templateHandler = require('./../modules/automation/templateHandler.js'),
       config          = require('./../config/automation.config');
 
 class AutomationController {
@@ -6,12 +6,10 @@ class AutomationController {
   getTemplateList(appType) {
 
     return new Promise((resolve, reject) => {
-      if (appType) {
-        appType = appType.trim().toLowerCase();
-      }
-      let query = {'app': config.appList.includes(appType) ? appType : null};
 
-      templateService.getTemplates(query)
+      let query = (config.isValidApp(appType) ? ({'app': appType}) : {});
+
+        templateHandler.getTemplates(query)
         .then((templates) => {
           let templateMetaList = templates.map(function (obj) {
             return {
