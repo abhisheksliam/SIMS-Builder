@@ -12,7 +12,7 @@ var taskPreviewRouter = require('./taskpreview/taskPreview'),
 module.exports = function () {
 	router.use('/login', loginRouter());
 
-	router.use('*', verifyToken);
+	//router.use('*', verifyToken);
 
 	router.use('/taskPreview', taskPreviewRouter());
 	router.use('/skill', skillRoutes);
